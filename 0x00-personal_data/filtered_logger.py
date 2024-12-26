@@ -34,6 +34,6 @@ class RedactingFormatter(logging.Formatter):
     def format(self, record: logging.LogRecord) -> str:
         """fucntion that returns the log message obfuscated
         """
-        return filter_datum(self.feilds, self.REDACTION, 
-                            super(RedactingFormatter,self).format(record), 
+        return filter_datum(self.feilds, self.REDACTION,
+                            super(RedactingFormatter, self).format(record),
                             self.SEPARATOR)
