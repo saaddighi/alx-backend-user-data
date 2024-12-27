@@ -40,7 +40,7 @@ class RedactingFormatter(logging.Formatter):
         return filter_datum(self.feilds, self.REDACTION,
                             super(RedactingFormatter, self).format(record),
                             self.SEPARATOR)
-def get_logger() -> logging.LogRecord:
+def get_logger() -> logging.Logger:
     StreamHandler = logging.StreamHandler()
     StreamHandler.setFormatter(RedactingFormatter)
     user_data = logging.getLogger('name')
