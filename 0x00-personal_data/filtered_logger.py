@@ -66,6 +66,5 @@ def get_db(
         password=os.getenv('PERSONAL_DATA_DB_PASSWORD'),
         database=os.getenv('PERSONAL_DATA_DB_NAME')
     )
-    cursor = connection.cursor()
-    return cursor.execute('SELECT * FROM users')
+    return connection
     
