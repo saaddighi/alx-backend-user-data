@@ -53,18 +53,14 @@ def get_logger() -> logging.Logger:
     user_data.propagate = False
     logger.setLevel(logging.INFO)
 
-def get_db(
-    PERSONAL_DATA_DB_HOST="localhost",
-    PERSONAL_DATA_DB_USERNAME= "root",
-    PERSONAL_DATA_DB_PASSWORD= "",
-    PERSONAL_DATA_DB_NAME="holberton") -> mysql.connector.connection.MySQLConnection:
+def get_db() -> mysql.connector.connection.MySQLConnection:
     
     
     connection = mysql.connector.connect(
-        host=PERSONAL_DATA_DB_HOST,
-        user=PERSONAL_DATA_DB_USERNAME,
-        password=os.getenv('PERSONAL_DATA_DB_PASSWORD'),
-        database=os.getenv('PERSONAL_DATA_DB_NAME')
+        host=os.getenv("PERSONAL_DATA_DB_HOST","localhost"),
+        user=os.getenv("PERSONAL_DATA_DB_USERNAME","root"),
+        password=os.getenv('PERSONAL_DATA_DB_PASSWORD',""),
+        database=os.getenv('PERSONAL_DATA_DB_NAME',"")
     )
     return connection
     
