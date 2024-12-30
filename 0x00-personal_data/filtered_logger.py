@@ -11,12 +11,6 @@ import os
 
 
 PII_FIELDS = ('name', 'email', 'phone', 'ssn', 'password')
-connection = mysql.connector.connect(
-    PERSONAL_DATA_DB_HOST="localhost",
-    PERSONAL_DATA_DB_USERNAME= "root",
-    PERSONAL_DATA_DB_PASSWORD= "",
-    PERSONAL_DATA_DB_NAME="holberton"
-)
 
 
 def filter_datum(
