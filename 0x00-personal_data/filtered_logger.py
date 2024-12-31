@@ -74,3 +74,6 @@ def main():
             list(PII_FIELDS), 
             RedactingFormatter.REDACTION, 
             row, RedactingFormatter.SEPARATOR))
+        
+if __name__ == "__main__":
+    main()
