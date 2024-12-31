@@ -53,6 +53,7 @@ def get_logger() -> logging.Logger:
     user_data.propagate = False
     logger.setLevel(logging.INFO)
 
+
 def get_db() -> mysql.connector.connection.MySQLConnection:
     """connect to MySQL database"""
     connection = mysql.connector.connect(
