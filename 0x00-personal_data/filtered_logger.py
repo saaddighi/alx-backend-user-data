@@ -63,3 +63,14 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         password=os.getenv("PERSONAL_DATA_DB_PASSWORD", "")
     )
     return connection
+
+
+def main():
+    con = get_db()
+    cursor = con.cursor()
+    cursor.execute('SELECT * FROM users')
+    for row in cursor:
+        print(filter_datum(
+            list(PII_FIELDS), 
+            RedactingFormatter.REDACTION, 
+            row, RedactingFormatter.SEPARATOR))
