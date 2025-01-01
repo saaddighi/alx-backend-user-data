@@ -24,3 +24,7 @@ def stats() -> str:
     stats = {}
     stats['users'] = User.count()
     return jsonify(stats)
+  
+@app.views.route('/statu', methods=['GET'], strict_slashes=False)
+def statu():
+  return abort(401)
