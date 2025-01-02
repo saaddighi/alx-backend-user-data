@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 """ Module of Index views
 """
 from flask import jsonify, abort
@@ -25,6 +25,7 @@ def stats() -> str:
     stats['users'] = User.count()
     return jsonify(stats)
   
-@app.views.route('/statu', methods=['GET'], strict_slashes=False)
-def statu():
-  return abort(401)
+@app.views.route("/unauthorized", strict_slashes=False)
+def unauthorized():
+  """unauthorized route return error 401"""
+  abort(401)
